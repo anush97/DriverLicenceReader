@@ -23,13 +23,15 @@ pip install -r requirements.txt
 ## Usage
 
 1. Import the `DriverLicenceReader` class:
-```python
-from driver_licence_reader import DriverLicenceReader```
+``python
+from driver_licence_reader import DriverLicenceReader``
+
 2. Create an instance of the DriverLicenceReader class:
-```reader = DriverLicenceReader()```
+``reader = DriverLicenceReader()``
+
 3.Read the driver licence image and extract the information:
-```licence_data = reader.read('path/to/driver_licence_image.jpg')
-print(licence_data)```
+``licence_data = reader.read('path/to/driver_licence_image.jpg')
+print(licence_data)``
 
 ## Contributing
 Contributions are welcome! Please read the CONTRIBUTING.md file for details on how to contribute to this project.
