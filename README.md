@@ -1,6 +1,7 @@
 # Driver Licence Reader
 
-A simple and efficient driver licence reader implemented in Python. This repository contains the source code to extract and parse information from driver licences using OCR (Optical Character Recognition).
+A simple and efficient driver licence reader implemented in Python. This repository contains the source code to extract and parse information from driver licences using OCR (Optical Character Recognition).The extracted data is displayed in a tabular format on the frontend.
+
 
 ## Table of Contents
 - [Features](#features)
@@ -8,6 +9,14 @@ A simple and efficient driver licence reader implemented in Python. This reposit
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Technologies Used
+
+- Node.js
+- Express
+- AWS Textract
+- Python
+- MySQL
 
 ## Features
 - Reads and extracts information from driver licences.
@@ -19,22 +28,31 @@ A simple and efficient driver licence reader implemented in Python. This reposit
 1. Clone the repository:
 2. Install the required dependencies:
 pip install -r requirements.txt
+3. Set up the AWS credentials and region in the `app.js` file:
+
+``AWS.config.update({
+region: 'your-region',
+credentials: new AWS.SharedIniFileCredentials({profile: 'your-aws-profile'})
+});``
+4. Set up the MySQL database:
+
+- Create a new MySQL database and import the provided SQL schema.
+- Update the `db.js` file with your database credentials (host, user, password, and database name).
+
+5. Start the Node.js server:
+node app.js
+6. Start the Node.js server:
+``node app.js ``
+
+7. Access the application in your browser at `http://localhost:3000`.
 
 ## Usage
 
-1. Import the `DriverLicenceReader` class:
-``python
-from driver_licence_reader import DriverLicenceReader``
-
-2. Create an instance of the DriverLicenceReader class:
-``reader = DriverLicenceReader()``
-
-3.Read the driver licence image and extract the information:
-``licence_data = reader.read('path/to/driver_licence_image.jpg')
-print(licence_data)``
-
-## Contributing
-Contributions are welcome! Please read the CONTRIBUTING.md file for details on how to contribute to this project.
+1. Browse to the application in your web browser.
+2. Upload a driver's license image using the file input.
+3. Click the "Submit" button to process the image.
+4. The extracted data will be displayed in a table below the upload form.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
