@@ -34,6 +34,7 @@ pip install -r requirements.txt
 region: 'your-region',
 credentials: new AWS.SharedIniFileCredentials({profile: 'your-aws-profile'})
 });``
+
 4. Set up the MySQL database:
 
 - Create a new MySQL database and import the provided SQL schema.
