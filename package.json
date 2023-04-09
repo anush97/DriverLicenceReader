@@ -19,7 +19,6 @@
     "mysql2": "^3.2.0"
   },
   "devDependencies": {
-    "@vercel/node": "^2.10.3",
-    "vercel": "^28.18.4"
+
   }
 }
