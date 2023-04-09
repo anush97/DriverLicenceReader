@@ -8,7 +8,7 @@
 </head>
 <body>
   <h1>Driver's License Reader</h1>
-  <form id="upload-form">
+  <form id="upload-form" action="/api/upload" method="post" enctype="multipart/form-data">
     <label for="image">Upload a driver's license image:</label>
     <input type="file" id="image" name="image" accept="image/*">
     <button type="submit">Submit</button>

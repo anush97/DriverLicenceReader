@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const multer = require('multer');
 const fs = require('fs');
@@ -12,7 +13,7 @@ const arr = [];
 
 // Configure the AWS SDK
 AWS.config.update({
-  region: 'us-east-1',
+  region: process.env.AWS_REGION,
 });
 
 // Serve the static files
@@ -43,7 +44,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
       res.status(500).send(err);
     } else {
       // Call the Python script to analyze the image
-      const python = spawn('python', ['analyze_id.py', 'us-east-1', bucketName, data.Key]);
+      const python = spawn('python', ['analyze_id.py', process.env.AWS_REGION, bucketName, data.Key]);
 
       let output = '';
       python.stdout.on('data', (data) => {
