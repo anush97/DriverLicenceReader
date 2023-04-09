@@ -24,6 +24,6 @@ if __name__ == "__main__":
     region = sys.argv[1]
     bucket_name = sys.argv[2]
     file_name = sys.argv[3]
-    #extracted_data = analyze_id(region, bucket_name, "dl1.jpg")
-    extracted_data = analyze_id(region, bucket_name, file_name)
+    extracted_data = analyze_id(region, bucket_name, "dl1.jpg")
+    #extracted_data = analyze_id(region, bucket_name, file_name)
     print(json.dumps(extracted_data))  

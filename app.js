@@ -13,7 +13,7 @@ const arr = [];
 
 // Configure the AWS SDK
 AWS.config.update({
-  region: process.env.AWS_REGION,
+  region:'us-east-1' ,
 });
 
 // Serve the static files
@@ -44,7 +44,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
       res.status(500).send(err);
     } else {
       // Call the Python script to analyze the image
-      const python = spawn('python', ['analyze_id.py', process.env.AWS_REGION, bucketName, data.Key]);
+      const python = spawn('python', ['analyze_id.py', 'us-east-1', bucketName, data.Key]);
 
       let output = '';
       python.stdout.on('data', (data) => {

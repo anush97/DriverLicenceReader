@@ -1,5 +1,4 @@
 .vercel
 node_modules/
 uploads/
-# .gitignore
-.env
+
