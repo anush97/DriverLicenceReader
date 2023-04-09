@@ -41,7 +41,7 @@ function createTableHeader() {
       thead.innerHTML = '';
       tbody.innerHTML = '';
   
-      const response = await fetch('/upload', {
+      const response = await fetch('/.netlify/functions/upload', {
         method: 'POST',
         body: formData,
       });
